@@ -1,6 +1,6 @@
-# divine-v1.0
+# vue-divine
 
-> Project prototype.
+> A Vue.js project
 
 ## Build Setup
 

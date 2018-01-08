@@ -1,0 +1,19 @@
+{
+  "name": "vue-divine",
+  "version": "1.0.0",
+  "description": "Vue Divine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://SWKP:starwolf1864@github.com/SWKP/vue-testing.git"
+  },
+  "author": "Karol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SWKP/vue-testing/issues"
+  },
+  "homepage": "https://github.com/SWKP/vue-testing#readme"
+}
