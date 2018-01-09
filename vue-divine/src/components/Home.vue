@@ -2,20 +2,20 @@
     <div>
         <app-header></app-header>
         <app-homeBody></app-homeBody>
-        <app-footer></app-footer>
+        <app-footer id="footer"></app-footer>
     </div>
 </template>
 
 <script>
 
 import Header from './shared/Header';
-import HomeBody from './shared/HomeBody';
+import Body from './shared/Body';
 import Footer from './shared/Footer';
 
 export default {
   components: {
       appHeader: Header,
-      appHomeBody: HomeBody,
+      appHomeBody: Body,
       appFooter: Footer
   }
 }
