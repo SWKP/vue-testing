@@ -25,6 +25,8 @@
             submitPost() {
                 //console.log('Post Submitted');
                 eventBus.$emit('postWasSubmitted', this.post);
+                this.post.title = '';
+                this.post.message = '';
 
             }
         }
@@ -37,15 +39,12 @@
     .coreSection{
         display: table;
         margin: 0 auto;
-        padding: 10px 0px;
+        padding: 15px 0px;
         width: 200px;
     }
     input{
         margin: 5px 0px;
         padding:10px;
-    }
-    .messageForm{
-
     }
     textarea {
         width: 300px;
