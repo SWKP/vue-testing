@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import CentralNavCore from './centralNavCore';
-import CentralNavComponents from './centralNavComponents';
+import CentralNavCore from './CentralNavCore';
+import CentralNavComponents from './CentralNavComponents';
 
 export default {
     components: {

@@ -7,14 +7,20 @@
                 <li>View Articles</li>
             </ul>
             <div>
-                <h1 class="coreSection">Make Post</h1>
+                <app-createPost></app-createPost>
             </div>
         </nav>
     </div>
 </template>
 
 <script>
+import CreatePost from './CreatePost';
 
+export default {
+    components: {
+        appCreatePost: CreatePost
+    }
+}
 </script>
 
 <style scoped>
@@ -35,10 +41,6 @@
         flex: 0 1 auto; /* Default */
         list-style-type: none;
         padding: 20px 10%;
-    }
-    .coreSection{
-        text-align: center;
-        padding: 50px 0px;
     }
 
 </style>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CentralNav from './centralNavigation/centralNav';
+import CentralNav from './centralNavigation/CentralNav';
 import MasonryPosts from './MasonryPosts';
 
 export default {
