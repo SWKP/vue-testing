@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import CentralNav from './centralNavigation/CentralNav';
+import CentralNav from './centralNavigation/centralNav';
 import MasonryPosts from './MasonryPosts';
 
 export default {
-  components: {
-      appCentralNav: CentralNav,
-      appMasonryPosts: MasonryPosts
-  }
+    components: {
+        appCentralNav: CentralNav,
+        appMasonryPosts: MasonryPosts
+    }
 }
 
 </script>

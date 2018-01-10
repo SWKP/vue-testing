@@ -17,13 +17,14 @@
     export default {
         data: function () {
             return {
-                post: { title: '', message: '' }
+                post: { title: '', message: '', timeStamp: '' }
 
             }
         },
         methods: {
             submitPost() {
                 //console.log('Post Submitted');
+                this.post.timeStamp = new Date().getTime();
                 eventBus.$emit('postWasSubmitted', this.post);
                 this.post.title = '';
                 this.post.message = '';

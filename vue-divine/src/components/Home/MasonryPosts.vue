@@ -1,8 +1,7 @@
 <template>
     <div id="masonryPosts">
         <!--<app-masonryPost class="item"></app-masonryPost>-->
-        <app-masonryPost class="item" v-for="post in filteredPosts" :data="post"></app-masonryPost>
-
+        <app-masonryPost class="item" v-for="(post, index) in filteredPosts" :data="post" :index="index"></app-masonryPost>
     </div>
 </template>
 
@@ -17,18 +16,19 @@
         data: function () {
             return {
                 searchPost: '',
-                post: [
-                    { title: '', message: '' }
-                ],
+                post: { title: '', message: '', timeStamp: '' }
+                ,
                 posts: [
-                    {title: 'Post One', author: 'My Name', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-                    {title: 'Hello World', author: 'My Name2', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-                    {title: 'Test123', author: 'My Name3', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-                    {title: 'MyTitle4', author: 'My Name4', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-                    {title: 'MyTitle5', author: 'My Name5', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-                    {title: 'MyTitle6', author: 'My Name6', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
+
+                    { id: '', title: 'Post One', author: 'My Name', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
+                    { id: '', title: 'Hello World', author: 'My Name2', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
+                    { id: '', title: 'Test123', author: 'My Name3', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
+
                 ]
             }
+        },
+        methods: {
+
         },
         computed: {
             /* Filter the posts array based on search value */
@@ -43,11 +43,18 @@
             eventBus.$on('postWasSubmitted', (data) => {
                 this.post.title = data.title;
                 this.post.message = data.message;
+                this.post.timeStamp = data.timeStamp;
                 this.posts.push(this.post);
+                this.post = { title: '', message: '', timeStamp: '' };
+                console.log(this.posts);
             });
             eventBus.$on('postWasSearched', (searchData) => {
                 console.log('Search query is: ' + searchData);
                 this.searchPost = searchData;
+            });
+            /* Delete Post */
+            eventBus.$on('deleteThisPost', (index) => {
+                this.posts.splice(index, 1);
             });
         }
     }

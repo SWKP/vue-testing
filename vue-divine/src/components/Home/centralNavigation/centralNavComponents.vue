@@ -1,9 +1,9 @@
 <template>
     <div class="centralNavComponents">
         <ul>
-            <li><span>?</span>Daily Intention</li>
-            <li><span>?</span>Mindful Moment</li>
-            <li><span>?</span>My Horoscope</li>
+            <li><p><span>?</span>Daily Intention</p></li>
+            <li><p><span>?</span>Mindful Moment</p></li>
+            <li><p><span>?</span>My Horoscope</p></li>
         </ul>
     </div>
 </template>
@@ -17,17 +17,31 @@
         border: 2px solid blue;
     }
     ul {
+        width:100%;
         padding: 0px;
+        min-height: 245px;
+        display: table;
     }
     li {
+        display: table-row;
         list-style-type: none;
-        padding: 20px 10%;
         text-align:center;
     }
     span {
         border-radius: 50%;
-        border: 1px solid black;
+        border: 2px solid black;
         padding: 10px 15px;
         margin: 10px;
+    }
+    p{
+        padding-top:15px;
+    }
+    li:hover{
+        background: #72ffb1;
+        color: white;
+        cursor:pointer;
+    }
+    span:hover{
+        border: 2px solid white;
     }
 </style>
