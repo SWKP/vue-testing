@@ -23,12 +23,13 @@
         },
         methods: {
             submitPost() {
-                //console.log('Post Submitted');
-                this.post.timeStamp = new Date().getTime();
+
+                var date = new Date();
+
+                this.post.timeStamp = date.toLocaleDateString("en-US") + " at " + date.toLocaleTimeString("en-US");
                 eventBus.$emit('postWasSubmitted', this.post);
                 this.post.title = '';
                 this.post.message = '';
-
             }
         }
 

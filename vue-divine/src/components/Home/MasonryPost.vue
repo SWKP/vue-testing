@@ -3,8 +3,8 @@
         <h2>Title: {{ data.title }}</h2>
         <button @click="deletePost" class="delete">x</button>
         <p>Index: {{ index }}</p
-        <p>Time: {{ data.timeStamp }}</p>
         <p>Message: {{ data.message }}</p>
+        <p>{{ data.timeStamp }}</p>
     </div>
 </template>
 
@@ -31,6 +31,9 @@
     .singlePost{
         padding: 25px;
         border: 2px solid black;
+    }
+    .singlePost:hover{
+        background: #febdff;
     }
     .delete{
         border: 2px solid #d0d0d0;

@@ -44,7 +44,7 @@
                 this.post.title = data.title;
                 this.post.message = data.message;
                 this.post.timeStamp = data.timeStamp;
-                this.posts.push(this.post);
+                this.posts.unshift(this.post);
                 this.post = { title: '', message: '', timeStamp: '' };
                 console.log(this.posts);
             });
