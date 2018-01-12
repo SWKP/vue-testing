@@ -1,9 +1,9 @@
 <template>
     <div class="centralNavComponents">
         <ul>
-            <li><p><span>?</span>Daily Intention</p></li>
-            <li><p><span>?</span>Mindful Moment</p></li>
-            <li><p><span>?</span>My Horoscope</p></li>
+            <li><p><span title="Daily intention tooltip: Lorem ipsum dolor sit amet, consectetur adipiscing elit.">?</span>Daily Intention</p></li>
+            <li><p><span title="Mindful Moment tooltip: Lorem ipsum dolor sit amet, consectetur adipiscing elit.">?</span>Mindful Moment</p></li>
+            <li><p><span title="My Horoscope tooltip: Lorem ipsum dolor sit amet, consectetur adipiscing elit.">?</span>My Horoscope</p></li>
         </ul>
     </div>
 </template>
