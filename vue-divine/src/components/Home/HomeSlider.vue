@@ -3,7 +3,7 @@
 <div id="slider">
   <slider animation="fade">
     <p style="line-height: 280px; font-size: 5rem; text-align: center;" v-if="!list.length">Loading...</p>
-    <slider-item v-for="(i, index) in list" :key="index" :on-click="test">
+    <slider-item v-for="(i, index) in list" :key="index">
       <div :style="i">
         <p style="line-height: 280px; font-size: 5rem; text-align: center; padding-top: 6%;">Slide {{ index + 1 }}</p>
       </div>

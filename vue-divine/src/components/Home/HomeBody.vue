@@ -1,20 +1,37 @@
 <template>
     <div id="homeBody">
-        <app-centralNav></app-centralNav>
+        <!-- Dynamic login component from CentralNavCore -->
+        <component :is="currentView"></component>
+
         <app-masonryPosts></app-masonryPosts>
     </div>
 </template>
 
 <script>
-import CentralNav from './centralNavigation/centralNav';
-import MasonryPosts from './MasonryPosts';
+    import CentralNav from './centralNavigation/CentralNav';
+    import CentralNavLogin from './centralNavigation/CentralNavLogin';
+    import MasonryPosts from './MasonryPosts';
 
-export default {
-    components: {
-        appCentralNav: CentralNav,
-        appMasonryPosts: MasonryPosts
+    import { eventBus } from '../../main';
+
+    export default {
+        components: {
+            appCentralNav: CentralNav,
+            appCentralNavLogin: CentralNavLogin,
+            appMasonryPosts: MasonryPosts
+        },
+        data: function () {
+            return {
+                currentView: 'app-centralNavLogin'
+            }
+        },
+        created(){
+            /*call from CentralNavLogin */
+            eventBus.$on('loginToCentralNav', (data) => {
+                this.currentView = 'app-CentralNav';
+            });
+        }
     }
-}
 
 </script>
 

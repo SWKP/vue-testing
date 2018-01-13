@@ -7,9 +7,6 @@
                 <li @click="currentView='app-viewArticles'">View Articles</li>
             </ul>
             <div>
-                <!--<app-createPost></app-createPost>
-                <app-searchPost></app-searchPost>
-                <app-viewArticles></app-viewArticles>-->
                 <component :is="currentView"></component>
             </div>
         </nav>
