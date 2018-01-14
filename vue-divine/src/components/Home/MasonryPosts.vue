@@ -27,9 +27,17 @@
                 ]
             }
         },
-        methods: {
-
-        },
+        watch: {
+            /*watch for posts array size change */
+            posts: {
+              handler: function (val, oldVal) {
+                console.log('Posts Array size changed.')
+                /*Emit to homeBody */
+                return eventBus.$emit('postCount', this.posts.length);
+              },
+              deep: true
+            }
+          },
         computed: {
             /* Filter the posts array based on search value */
             filteredPosts: function(){
@@ -46,7 +54,6 @@
                 this.post.timeStamp = data.timeStamp;
                 this.posts.unshift(this.post);
                 this.post = { title: '', message: '', timeStamp: '' };
-                console.log(this.posts);
             });
             eventBus.$on('postWasSearched', (searchData) => {
                 console.log('Search query is: ' + searchData);
@@ -56,6 +63,15 @@
             eventBus.$on('deleteThisPost', (index) => {
                 this.posts.splice(index, 1);
             });
+
+            /*Check for initial posts length and send emiter to HomeBody*/
+            console.log('Posts Count on launch: ' + this.posts.length);
+            if(this.posts.length == 0){
+                eventBus.$emit('postCount', this.posts.length);
+            }
+
+
+
         }
     }
 
