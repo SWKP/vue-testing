@@ -7,7 +7,7 @@
                     <input v-model="login.username" placeholder="Username">
                     <input v-model="login.password" placeholder="Password">
                     <button class="loginButton" @click="loginSubmit">Login</button>
-                    <button class="loginButton">Sign Up</button>
+                    <button class="loginButton" @click="signUpSubmit">Sign Up</button>
                     <p class="errorMessage">{{ wrongLogin }}</p>
                 </div>
             </div>
@@ -44,6 +44,10 @@
                        this.wrongLogin = 'Wrong password. Hint: "Karl Owns."'
                    }
                 }
+            },
+            signUpSubmit: function(){
+                console.log('SignUp pressed.');
+                eventBus.$emit('signUpComponentSwap');
             }
         }
     }

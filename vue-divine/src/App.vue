@@ -1,18 +1,35 @@
 <template>
   <div>
-    <app-home></app-home>
+
+    <!--<app-home></app-home>-->
+    <component :is="currentView"></component>
   </div>
 </template>
 
 <script>
-import Home from './components/Home'
+    import { eventBus } from './main.js';
+    import Home from './components/Home';
+    import SignUp from './components/SignUp';
 
-export default {
-  name: 'app',
-  components: {
-    appHome: Home
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            appHome: Home,
+            appSignUp: SignUp
+        },
+        data: function () {
+            return {
+                currentView: 'app-home'
+
+            }
+        },
+        created(){
+            eventBus.$on('signUpComponentSwap', () => {
+                this.currentView = 'app-signUp';
+            });
+        }
+
+    }
 </script>
 
 <style>
