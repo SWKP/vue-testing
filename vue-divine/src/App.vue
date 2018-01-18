@@ -37,6 +37,7 @@
     html, body {
         margin:0;
         padding:0;
+        background-color: #313131;
     }
     h1,h2,h3,h4 {
         padding: 0px;
