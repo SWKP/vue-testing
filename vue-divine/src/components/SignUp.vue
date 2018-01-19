@@ -1,5 +1,6 @@
 <template>
     <div class="wrapper">
+        <app-progressBar class="progressBar" size="big" :val="40"></app-progressBar>
         <component :is="currentView"></component>
     </div>
 </template>
@@ -10,13 +11,15 @@
     import SignUpQuestionOne from './SignUp/SignUpQuestionOne';
     import SignUpQuestionTwo from './SignUp/SignUpQuestionTwo';
     import SignUpQuestionThree from './SignUp/SignUpQuestionThree';
+    import ProgressBar from 'vue-simple-progress';
 
     export default {
         components: {
             appSignUpJoin: SignUpJoin,
             appSignUpQuestionOne: SignUpQuestionOne,
             appSignUpQuestionTwo: SignUpQuestionTwo,
-            appSignUpQuestionThree: SignUpQuestionThree
+            appSignUpQuestionThree: SignUpQuestionThree,
+            appProgressBar: ProgressBar
         },
         data: function () {
             return {
@@ -46,7 +49,7 @@
     #content{
         width: 600px;
         text-align: center;
-        margin: 12% auto;
+        margin: 10% auto;
         padding:55px;
         background: #dad8d8;
     }
@@ -67,6 +70,11 @@
     p{
         text-align: left;
         margin: 25px 15px;
+    }
+    .progressBar {
+        width: 710px;
+        text-align: center;
+        margin: 10% auto 0px;
     }
 
 </style>

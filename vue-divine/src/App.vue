@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!--<app-home></app-home>-->
     <component :is="currentView"></component>
   </div>

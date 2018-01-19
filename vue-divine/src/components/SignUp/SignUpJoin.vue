@@ -8,6 +8,7 @@
             <br>
             <input placeholder="Password">
             <br>
+            <button @click="signUpBack">Back</button>
             <button @click="signUpNext">Next</button>
         </div>
 </template>
@@ -25,6 +26,9 @@
             signUpNext: function(){
                 console.log('Emitting');
                 eventBus.$emit('switchToQuestionOne');
+            },
+            signUpBack: function(){
+
             }
         }
     }
@@ -35,7 +39,7 @@
     #content{
         width: 600px;
         text-align: center;
-        margin: 12% auto;
+        margin: 0px auto 10%;
         padding:55px;
         background: #dad8d8;
     }

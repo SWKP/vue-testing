@@ -9,6 +9,7 @@
             <p>Date of birth:</p>
             <smooth-picker ref="birthSmoothPicker" :data="birthData" :change="birthDataChange" />
             <br>
+            <button @click="signUpBack">Back</button>
             <button @click="signUpNext">Next</button>
         </div>
 </template>
@@ -63,6 +64,9 @@
         methods: {
             signUpNext: function(){
                 eventBus.$emit('switchToQuestionTwo');
+            },
+            signUpBack: function(){
+
             },
             /*Gender Picker Methods*/
             clickOnGender () {
@@ -144,7 +148,7 @@
     #content{
         width: 600px;
         text-align: center;
-        margin: 12% auto;
+        margin: 0px auto 10%;
         padding:55px;
         background: #dad8d8;
     }
