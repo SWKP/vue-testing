@@ -26,6 +26,9 @@
             eventBus.$on('signUpComponentSwap', () => {
                 this.currentView = 'app-signUp';
             });
+            eventBus.$on('resetComponents', () => {
+                this.currentView = 'app-home';
+            });
         }
 
     }

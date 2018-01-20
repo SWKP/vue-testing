@@ -69,9 +69,6 @@
             if(this.posts.length == 0){
                 eventBus.$emit('postCount', this.posts.length);
             }
-
-
-
         }
     }
 

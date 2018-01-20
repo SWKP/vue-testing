@@ -26,9 +26,11 @@
             signUpNext: function(){
                 console.log('Emitting');
                 eventBus.$emit('switchToQuestionOne');
+                eventBus.$emit('increaseProgressBar');
             },
             signUpBack: function(){
-
+                eventBus.$emit('decreaseProgressBar');
+                eventBus.$emit('resetComponents');
             }
         }
     }

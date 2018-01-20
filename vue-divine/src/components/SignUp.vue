@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <app-progressBar class="progressBar" size="big" :val="40"></app-progressBar>
+        <app-progressBar class="progressBar" size="big" :val="progressBar"></app-progressBar>
         <component :is="currentView"></component>
     </div>
 </template>
@@ -23,7 +23,8 @@
         },
         data: function () {
             return {
-                currentView: 'appSignUpJoin'
+                currentView: 'appSignUpJoin',
+                progressBar: 0
             }
         },
         /* Event bus listeners below */
@@ -37,10 +38,28 @@
             eventBus.$on('switchToQuestionThree', () => {
                 this.currentView = 'appSignUpQuestionThree';
             });
+            eventBus.$on('increaseProgressBar', () => {
+                this.progressBar+= 33.333;
+                if(this.progressBar > 100){
+                    this.progressBar = 100;
+                }
+            });
+            eventBus.$on('decreaseProgressBar', () => {
+                this.progressBar-= 33.333;
+                if(this.progressBar < 0){
+                    this.progressBar = 0;
+                }
+            });
+            eventBus.$on('switchSignUpComponent', (data) => {
+                this.currentView = data;
+            });
 
 
+        },
+        methods: {
 
         }
+
     }
 </script>
 

@@ -1,13 +1,18 @@
 <template>
         <div id="content">
-            <h1>Questions 1</h1>
-            <input placeholder="Desired Screen Name">
+            <h1>Question 1</h1>
+            <input placeholder="Screen Name">
             <br>
-            <p>Pick your gender:</p>
+            <p>Avatar:</p>
+            <select name="avatar">
+                <option value="angel" selected>Angel</option>
+                <option value="demon">Demon</option>
+                <option value="cross">Cross</option>
+                <option value="halo">Halo</option>
+            </select>
+            <br>
+            <p>Gender:</p>
             <smooth-picker ref="genderSmoothPicker" :data="genderData" :change="genderDataChange" />
-            <br>
-            <p>Date of birth:</p>
-            <smooth-picker ref="birthSmoothPicker" :data="birthData" :change="birthDataChange" />
             <br>
             <button @click="signUpBack">Back</button>
             <button @click="signUpNext">Next</button>
@@ -19,11 +24,6 @@
 
     export default {
         data: function () {
-            const nowYear = (new Date()).getFullYear();
-            const years = [];
-            for (let i = 1991; i <= nowYear; i++) {
-            years.push(i);
-            }
             return {
                 genderData: [
                   {
@@ -34,39 +34,17 @@
                     textAlign: 'center',
                     className: 'row-group'
                   }
-                ],
-                birthData: [
-                  {
-                    currentIndex: parseInt((nowYear - 1991) / 2),
-                    flex: 3,
-                    list: years,
-                    textAlign: 'center',
-                    className: 'row-group'
-                  },
-                  {
-                    currentIndex: 8,
-                    flex: 3,
-                    list: [...Array(12)].map((m, i) => i + 1),
-                    textAlign: 'center',
-                    className: 'row-group'
-                  },
-                  {
-                    currentIndex: 1,
-                    flex: 3,
-                    list: [...Array(30)].map((d, i) => i + 1),
-                    onClick: this.clickOnDay,
-                    textAlign: 'center',
-                    className: 'item-group'
-                  }
                 ]
             }
         },
         methods: {
             signUpNext: function(){
                 eventBus.$emit('switchToQuestionTwo');
+                eventBus.$emit('increaseProgressBar');
             },
             signUpBack: function(){
-
+                eventBus.$emit('decreaseProgressBar');
+                eventBus.$emit('switchSignUpComponent', 'appSignUpJoin');
             },
             /*Gender Picker Methods*/
             clickOnGender () {
@@ -75,70 +53,8 @@
             },
             genderDataChange (gIndex, iIndex) {
                 console.info('Gender list: ', gIndex, iIndex);
-            },
-            /*Date Picker Methods*/
-            isLeapYear (year) {
-                return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)
-              },
-              birthDataChange (gIndex, iIndex) {
-                console.info('Date list', gIndex, iIndex);
-                const ciList = this.$refs.birthSmoothPicker.getCurrentIndexList();
-
-                if (gIndex === 0 || gIndex === 1) { // year or month changed
-                  let currentIndex = 15
-                  let monthCount = 30
-
-                  let month = iIndex + 1 // month
-                  if (gIndex === 0) { // year
-                    month = this.birthData[1].list[ciList[1]]
-                  }
-                  switch (month) {
-                    case 2:
-                      let selectedYear = this.birthData[0].list[ciList[0]] // month
-                      if (gIndex === 0) { // year
-                        selectedYear = this.birthData[0].list[iIndex]
-                      }
-
-                      let isLeapYear = false;
-                      if (this.isLeapYear(selectedYear)) {
-                        isLeapYear = true
-                      }
-
-                      monthCount = 28
-                      currentIndex = 14
-                      if (isLeapYear) {
-                        monthCount = 29
-                        currentIndex = 15
-                      }
-                      break
-                    case 4:
-                    case 6:
-                    case 9:
-                    case 11:
-                      monthCount = 30
-                      currentIndex = 15
-                      break
-                    default:
-                      monthCount = 31
-                      currentIndex = 16
-                  }
-                  const list = [...Array(monthCount)].map((d, i) => i + 1)
-                  this.$refs.birthSmoothPicker.setGroupData(2, { ...this.birthData[2], ...{ currentIndex, list }})
-                }
-              },
-              clickOnDay (gIndex, iIndex) {
-                window.alert('Clicked day: ' + this.data[gIndex].list[iIndex])
-              },
-              confirm () {
-                const ciList = this.$refs.birthSmoothPicker.getCurrentIndexList()
-                const year = this.data[0].list[ciList[0]]
-                const month = this.data[1].list[ciList[1]]
-                const day = this.data[2].list[ciList[2]]
-                window.alert(
-                  year + ' / ' + month + ' / ' + day
-                )
-              }
             }
+        }
 
     }
 </script>
@@ -174,6 +90,12 @@
     .smooth-picker.flex-box {
         width: 300px;
         margin: 0 auto;
+    }
+    select {
+        width: 220px;
+        padding: 10px;
+        border: none;
+        color: #b1a9a9;
     }
 
 </style>
