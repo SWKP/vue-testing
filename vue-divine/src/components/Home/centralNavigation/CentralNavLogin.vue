@@ -35,13 +35,13 @@
                 if(this.login.username == null && this.login.password == null){
                     this.wrongLogin = 'Please enter a name & password to login';
                 } else {
-                    if(this.login.username == 'Karl' && this.login.password == 'Owns'){
+                    if(this.login.username == 'admin' && this.login.password == 'pass'){
                    /*emit to homeBody */
                    eventBus.$emit('loginToCentralNav');
                    } else {
                        this.login.username = '';
                        this.login.password = '';
-                       this.wrongLogin = 'Wrong password. Hint: "Karl Owns."'
+                       this.wrongLogin = 'Wrong password. Hint: "admin pass."'
                    }
                 }
             },
