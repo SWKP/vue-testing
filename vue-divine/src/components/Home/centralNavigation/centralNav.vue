@@ -1,8 +1,8 @@
 <template>
-    <div id="centralNav">
-        <app-centralNavCore></app-centralNavCore>
-        <app-centralNavComponents></app-centralNavComponents>
-    </div>
+        <div id="centralNav">
+            <app-centralNavCore></app-centralNavCore>
+            <app-centralNavComponents></app-centralNavComponents>
+        </div>
 </template>
 
 <script>

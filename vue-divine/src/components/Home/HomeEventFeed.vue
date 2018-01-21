@@ -45,6 +45,8 @@
     }
 
     .ticker-wrap {
+      z-index: 99;
+      position: relative;
       background:#9200ab;
       width: 100%;
       overflow: hidden;
