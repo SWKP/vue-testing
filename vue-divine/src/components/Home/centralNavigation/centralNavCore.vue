@@ -2,9 +2,9 @@
     <div id="centralNavCore">
         <nav>
             <ul>
-                <li @click="currentView='app-createPost'">Make Post</li>
-                <li @click="currentView='app-searchPost'">Search</li>
-                <li @click="currentView='app-viewArticles'">View Articles</li>
+                <li @click="currentView='app-createPost'"><h2>Make Post<icon name="pencil-square" scale="1.5"></icon></h2></li>
+                <li @click="currentView='app-searchPost'"><h2>Search<icon name="search" scale="1.5"></icon></h2></li>
+                <li @click="currentView='app-viewArticles'"><h2>View Articles<icon name="newspaper-o" scale="1.5"></icon></h2></li>
             </ul>
             <div>
                 <component :is="currentView"></component>
@@ -50,12 +50,19 @@
         display: block;
         flex: 0 1 auto; /* Default */
         list-style-type: none;
-        padding: 20px 10%;
+        padding: 20px 8.3%;
     }
     li:hover{
         background: #72ffb1;
         color: white;
         cursor:pointer;
+    }
+    .fa-icon{
+        margin:0px 10px;
+        float: right;
+    }
+    h2{
+
     }
 
 </style>

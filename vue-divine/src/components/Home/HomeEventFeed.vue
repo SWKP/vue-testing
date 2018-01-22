@@ -2,7 +2,7 @@
     <div class="ticker-wrap">
         <div class="ticker">
           <div class="singleItem">Welcome to Dear, Divine.</div>
-          <div class="singleItem">Quote of the day: The best preparation for tomorrow is doing your best today.</div>
+            <div class="singleItem"><icon name="quote-left" scale="1.5"></icon>The best preparation for tomorrow is doing your best today.<icon name="quote-right" scale="1.5"></icon></div>
         </div>
     </div>
 </template>

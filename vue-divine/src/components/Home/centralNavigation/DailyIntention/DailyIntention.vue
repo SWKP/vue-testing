@@ -1,5 +1,9 @@
 <template>
-    <li><p><span>?</span>Daily Intention</p></li>
+    <div>
+        <li><p><icon name="question-circle-o" scale="2.5"></icon> Daily Intention</p></li>
+    </div>
+
+
 </template>
 
 <script>
@@ -7,17 +11,14 @@
 </script>
 
 <style scoped>
-    span {
-        border-radius: 50%;
-        border: 2px solid black;
-        padding: 10px 15px;
-        margin: 10px;
-    }
     p{
-        padding-top:15px;
+        position:relative;
+        bottom: 10px;
     }
-    span:hover{
-        border: 2px solid white;
+    svg.fa-icon {
+        position: relative;
+        top: 13px;
+        right: 5px;
     }
 
 </style>
