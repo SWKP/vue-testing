@@ -1,7 +1,8 @@
 <template>
   <div>
-    <!--<app-home></app-home>-->
-    <component :is="currentView"></component>
+    <router-view></router-view>
+    <!--<app-introPage></app-introPage>-->
+    <!--<component :is="currentView"></component>-->
   </div>
 </template>
 
@@ -9,17 +10,19 @@
     import { eventBus } from './main.js';
     import Home from './components/Home';
     import SignUp from './components/SignUp';
+    import IntroPage from './components/IntroPage';
+
 
     export default {
         name: 'app',
         components: {
             appHome: Home,
-            appSignUp: SignUp
+            appSignUp: SignUp,
+            appIntroPage: IntroPage
         },
         data: function () {
             return {
                 currentView: 'app-home'
-
             }
         },
         created(){
