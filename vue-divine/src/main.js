@@ -32,11 +32,11 @@ const routes = [
         component: SignUp
     },
     {
-        path: '/',
+        path: '/home',
         component: Home
     },
     {
-        path: '/Intro',
+        path: '/',
         component: IntroPage
     }
 ];

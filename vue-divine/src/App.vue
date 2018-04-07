@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-view></router-view>
+
+        <router-view></router-view>
+
     <!--<app-introPage></app-introPage>-->
     <!--<component :is="currentView"></component>-->
   </div>

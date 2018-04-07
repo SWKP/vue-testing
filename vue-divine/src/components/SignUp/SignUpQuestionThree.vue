@@ -13,7 +13,7 @@
             <br>
 
             <button @click="signUpBack">Back</button>
-            <a href="/"><button @click="signUpNext">Next</button></a>
+            <a href="/home"><button @click="signUpNext">Next</button></a>
         </div>
 </template>
 
