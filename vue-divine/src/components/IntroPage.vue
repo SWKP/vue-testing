@@ -1,53 +1,67 @@
 <template>
     <div>
         <div id="fullpage">
-	<div class="section" id="section0">
+	<div class="section slideOne" id="section0">
+		<video autoplay muted loop id="myVideo">
+				<source src="../assets/video/Sunset-Lapse.mp4" type="video/mp4">
+				<source src="../assets/video/Sunset-Lapse.webm" type="video/webm">
+				Your browser is not supported!
+		</video>
 		<div class="content">
 			<h1>DEAR DIVINE</h1>
-			<p style="max-width:500px; margin:0 auto; padding-bottom:20px;">A soul seekers community  to engage in spiritual activity and conversation.</p>
-            <button style="background-color:black;">GET STARTED</button><button style="background-color:black;">LOGIN</button>
+			<p style="max-width:500px; margin:0 auto; padding-bottom:20px;">A spiritual community for truth seekers and truth tellers.</p>
+            <a href="/SignUp"><button class="btn btn--white btn--animated">GET STARTED</button></a>
+			<button class="btn btn--white btn--animated">LOGIN</button>
 		</div>
 	</div>
-	<div class="section" id="section1">
+	<div class="section slideTwo" id="section1">
 
 			<div class="content">
-                <div style="width: 250px; height: 250px; background-color:grey;border-radius: 50%; margin: 0 auto;"></div>
+                <img src="../assets/img/logo-mainV1.png" style="width: 250px; height: 250px; border-radius: 50%; margin: 0 auto;">
 				<h2 style="margin-bottom: -50px;">Dear Divine</h2>
                 <h2>Digital divinity...</h2>
-                <p style="max-width:650px; margin:20px auto;"> A community for truth seekers and truth tellers.</p>
-                <p style="max-width:650px; margin:20px auto;"> Join to find meaningful connections through our astrological algorythm.</p>
-                <p style="max-width:650px; margin:20px auto;">Stay to exchange spiritual support and information.</p>
+                <p>Join to connect with fellow soulseekers through our astrological algorythm.</p>
+
+                <p>Stay to seek, find and exchange spiritual support and information.</p>
                 <div></div>
 			</div>
 	</div>
-            <div class="section" id="section1" style="background-color:#6d214b;">
+            <div class="section slideThree" id="section1">
 
 			<div class="content">
 				<h2>SEEK</h2>
-                <p style="max-width:650px; margin:0 auto;"> Spiritual information and activities to spark your eternal light.</p>
-                <p>*PINTEREST PAGE*</p>
+                <p> Spiritual information and activities to spark your eternal light.</p>
+
+                <img width="800px" src="../assets/img/seekPlaceholder.png" alt="Seek articles placeholder">
 			</div>
 	</div>
-            <div class="section" id="section1" style="background-color:rgb(22, 123, 171);">
+            <div class="section slideFour" id="section1">
 
 			<div class="content">
+				<img width="600px" src="../assets/img/findPlaceholder2.png" alt="Find placeholder">
 				<h2>FIND</h2>
-                <p style="max-width:650px; margin:0 auto; color: white;"> Your soulmates through our astrological algorythm.</p>
+                <p style="max-width:350px; margin:0 auto; color: white;">Spiritual masters and healers who will inspire you.</p>
 			</div>
 	</div>
-            <div class="section" id="section1" style="background-color:rgb(230, 173, 0);">
+            <div class="section slideFive" id="section1" style="background-color:rgb(230, 173, 0);">
 
 			<div class="content">
+				<img width="350px" src="../assets/img/exchangePlaceholder.png" alt="Exchange placeholder">
 				<h2>EXCHANGE</h2>
-                <p style="max-width:650px; margin:0 auto; color: black;">Exchange information, goods and services with a network of spiritual healers.</p>
+                <p style="max-width:350px; margin:0 auto; color: black;">Information and support with each other and a network of spiritual healers.</p>
 			</div>
 	</div>
-	<div class="section" id="section2">
+	<div class="section slideSix" id="section2">
+		<video autoplay muted loop id="myVideo2">
+				<source src="../assets/video/Three-Swans.mp4" type="video/mp4">
+				<source src="../assets/video/Three-Swans.webm" type="video/webm">
+				Your browser is not supported!
+		</video>
         <div class="slide" id="slide1">
             <div class="content">
-			<h2>Join Dear Divine if you want to... live</h2>
-			<p>T-800</p>
-                <button style="background-color:red;">DIE</button><a href="/SignUp"><button class="joinButton" @click="signUp" style="background-color:green;">LIVE</button></a>
+                <h2>Join Dear Divine</h2>
+                <a href="/SignUp"><button class="btn btn--white btn--animated" >Sign Up</button></a>
+				<button class="btn btn--white btn--animated">Login</button>
 		</div>
         </div>
 		<div class="slide" id="slide2">
@@ -86,12 +100,12 @@
         },
         mounted(){
             fullpage.initialize('#fullpage', {
-            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', 'lastPage'],
             menu: '#menu',
             navigation: true,
             navigationPosition: 'right',
             navigationColor: '#f2f',
-            navigationTooltips: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+            navigationTooltips: ['GET STARTED', 'JOIN US', 'SEEK', 'FIND', 'EXCHANGE', 'LOGIN'],
             slidesNavigation: false,
             slidesNavPosition: 'bottom',
             scrollBar: false,
@@ -106,7 +120,7 @@
             keyboardScrolling: true,
             recordHistory: true,
             //design
-            controlArrows: true
+            controlArrows: false
         });
             console.log('WORKING?');
         }
@@ -114,11 +128,10 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '../assets/sass/main.scss';
 
-
-    /* Reset CSS
-		 * --------------------------------------- */
+    /* Reset CSS -------------------------- */
 		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 		form,fieldset,input,textarea,p,blockquote,th,td {
 		    padding: 0;
@@ -169,15 +182,13 @@
 
 		/* Custom CSS
 		 * --------------------------------------- */
-		body{
-			font-family: arial,helvetica;
-			color: #F2F2F2;
-		}
+
 		h1{
 			font-size: 6em;
 		}
 		p{
-			font-size: 2em;
+			font-family: Rambla, Helvetica, Arial, sans-serif;
+			font-size: 1.5rem;
 		}
 		.content{
 			position: relative;
@@ -185,63 +196,71 @@
 			transform: translateY(-50%);
 			text-align: center;
 		}
-    .section{
-
-    }
 
 		/* Section 1
 		 * --------------------------------------- */
 		#section0{
-			background-color: #BFDA00;
             height: 100vh!important;
-            background-image:url(../assets/img/slide01.jpg);
+			background-image: linear-gradient(
+        to right bottom,
+		 rgba(180, 14, 234, 0.6), rgba(180, 14, 234, 0.6));
+		 //url(../assets/img/slide02.jpg)
+			background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
-		}
-		#section0 h1{
-			color: #fff;
-            font-family: Rambla, Helvetica, Arial, sans-serif;
-		}
-		#section0 p{
-			color: #fff;
-			opacity: 0.5;
-		}
+			background-size: cover;
 
+			& h1{
+				color: #fff;
+				font-family: Rambla, Helvetica, Arial, sans-serif;
+			}
+
+			& p{
+				opacity:0.75;
+				margin-bottom: 30px!important;
+				color: #fff;
+				padding: 18px 0 20px 0;
+				border: 2px solid #ffffff42;
+				border-radius: 5px;
+				font-size: 20px;
+			}
+		}
 
 		/* Section 2
 		 * --------------------------------------- */
 		#section1{
-			background-color: #14333a;
-            height: 100vh!important;
-		}
-		#section1 h2{
-            font-size:50px;
-			color: limegreen;
-            font-family: Rambla, Helvetica, Arial, sans-serif;
-            padding: 20px 10%;
-		}
-		#section1 p{
-			opacity: 0.8;
-            color: #dcb484;
+			height: 100vh!important;
+
+			& h2{
+				font-size:50px;
+				color: rgb(209, 216, 209);
+				font-family: Rambla, Helvetica, Arial, sans-serif;
+				padding: 20px 10%;
+			}
+
+			& p{
+				opacity: 0.8;
+				color: #dcb484;
+			}
 		}
 
 
 		/* Section 3
 		 * --------------------------------------- */
     #slide1{
-        background-image:url(../assets/img/spaceBg01.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
+		background-image: linear-gradient(to right bottom, rgba(188, 64, 228, 0), rgba(65, 51, 123, 0.23));
+		//background-image:url(../assets/img/slideEnd01.jpg);
+		background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 		#section2{
-			background-color: #2C3E50;
             height: 100vh!important;
 		}
-		#section2 h2{
+		#section2 h2, #section0 h1 {
 			color: #fff;
-            font-family: Centauri, Helvetica, Arial, sans-serif;
+            font-family: Rambla, Helvetica, Arial, sans-serif;
             padding: 20px 10%;
-            text-shadow: 7px 7px 7px #692369;
+            text-shadow: 7px 7px 7px #69236952;
 		}
 		#section2 p{
 			opacity: 0.6;
@@ -251,19 +270,72 @@
     /*Other styling */
     #fp-nav ul li a span, .fp-slidesNav ul li a span {
     background: #fff!important;
-    }
-    button {
-        margin: 10px;
-        padding: 10px 30px;
-        border-radius: 20px;
-        transition: all 0.25s ease-in;
-    }
-    button {
-        font-size: 15px;
-        color: white;
-    }
-    button:hover{
-        background-color:black!important;
-    }
+	}
+
+	.slideTwo{
+		background: linear-gradient(
+        to right bottom,
+		 #c21500, #ffc500);
+
+		 & h2 {
+			 color: #fff!important;
+		 }
+
+		 & p {
+			 max-width:320px; margin:20px auto; text-align:left;
+			 color: #fff!important;
+		 }
+	}
+	.slideThree{
+		background: linear-gradient(
+        to right bottom,
+		 rgb(52, 247, 178), rgb(26, 136, 98));
+
+		 & h2 {
+			 color: #fff!important;
+		 }
+
+		 & p {
+			 max-width:320px; margin:20px auto; text-align:left;
+			 color: #fff!important;
+		 }
+	}
+	.slideFour{
+		background: linear-gradient(
+        to right bottom,
+		 #4b134f, #c94b4b);
+
+		 & h2 {
+			 color: #fff!important;
+		 }
+
+		 & p {
+			 max-width:320px; margin:20px auto; text-align:center;
+			 color: #fff!important;
+		 }
+	}
+	.slideFive{
+		background: linear-gradient(
+        to right bottom,
+		 #92FE9D, #00C9FF);
+
+		 & h2 {
+			 color: #fff!important;
+		 }
+
+		 & p {
+			 max-width:320px; margin:20px auto; text-align:center;
+			 color: #fff!important;
+		 }
+	}
+
+	#myVideo, #myVideo2 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100wv;
+		z-index: -1;
+	}
+
 
 </style>
