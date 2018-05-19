@@ -11,7 +11,7 @@
 			<h1>DEAR DIVINE</h1>
 			<p style="max-width:500px; margin:0 auto; padding-bottom:20px;">A spiritual community for truth seekers and truth tellers.</p>
             <a href="/SignUp"><button class="btn btn--white btn--animated">GET STARTED</button></a>
-			<button class="btn btn--white btn--animated">LOGIN</button>
+            <a href="#login"><button class="btn btn--white btn--animated">LOGIN</button></a>
 		</div>
 	</div>
 	<div class="section slideTwo" id="section1">
@@ -61,7 +61,7 @@
             <div class="content">
                 <h2>Join Dear Divine</h2>
                 <a href="/SignUp"><button class="btn btn--white btn--animated" >Sign Up</button></a>
-				<button class="btn btn--white btn--animated">Login</button>
+                <a href="#login"><button class="btn btn--white btn--animated">Login</button></a>
 		</div>
         </div>
 		<div class="slide" id="slide2">
@@ -75,7 +75,25 @@
 			</div>
 		</div>
 	</div>
+
 </div>
+        <div class="login" id="login">
+        <div class="login__content">
+            <a href="#" class="login__close">&times;</a>
+            <form action="#" class="form">
+                <h2><span>Sign in to</span><br> Dear Divine</h2>
+                <div class="form__group">
+                    <input type="text" class="form__input" placeholder="Full Name" id="name" required>
+                    <label for="name" class="form__label">Full name</label>
+                </div>
+                <div class="form__group">
+                    <input type="email" class="form__input" placeholder="Email address" id="email" required>
+                    <label for="email" class="form__label">Email</label>
+                </div>
+            </form>
+            <button class="btn btn--purple btn--animated">Login</button>
+        </div>
+    </div>
     </div>
 </template>
 
@@ -337,5 +355,128 @@
 		z-index: -1;
 	}
 
+    /*Login Popup*/
+    .login {
+        position: fixed;
+        background-color:rgba(black, .8);
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 99999999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .4s;
+
+        &:target {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &__content {
+            @include centerElement;
+            width: 400px;
+            background-color: white;
+            box-shadow: 0 2rem 4rem rgba(black, .2);
+            border-radius: 3px;
+            display: table;
+            overflow: hidden;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(.25);
+            transition: all .4s .2s;
+            padding: 2rem;
+
+            button {
+                margin: 1rem 2.5rem;
+            }
+
+            span {
+                font-size: 1rem;
+                margin-bottom: -20px;
+            }
+
+            h2 {
+                text-align:center;
+                margin: 3rem 0;
+                font-family: Rambla, Helvetica, Arial, sans-serif;
+                font-size: 3rem;
+                line-height: 2rem;
+            }
+        }
+
+        &:target &__content {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        &__close {
+            &:link,
+            &:visited {
+                color: $color-grey-dark;
+                position: absolute;
+                top: .5rem;
+                right: 1.5rem;
+                font-size: 3rem;
+                text-decoration: none;
+                display: inline-block;
+                transition: all .2s;
+                line-height: 1;
+            }
+
+            &:hover {
+                color: $color-purple;
+            }
+        }
+    }
+
+    .form {
+        &__input {
+            font-size: 1rem;
+            font-family: inherit;
+            padding: 1rem 2rem;
+            margin: 0 auto;
+            border-radius: 2px;
+            font-family: Rambla, Helvetica, Arial, sans-serif;
+            background-color: white;
+            border: none;
+
+            border-bottom: 3px solid transparent;
+            width: 70%;
+            display: block;
+            transition: all .3s;
+
+            &:focus {
+                outline:1px solid #f1f1f1;
+                box-shadow: 0 1rem 2rem rgba($color-black, .1);
+                border-bottom: 3px solid $color-primary;
+            }
+
+            &:focus:invalid {
+                border-bottom:  3px solid $color-secondary-dark;
+            }
+
+            &::-webkit-input-placeholder {
+                color: $color-grey-dark-2;
+            }
+
+        }
+
+        &__label {
+            font-family: Rambla, Helvetica, Arial, sans-serif;
+            font-size: .7rem;
+            font-weight: 500;
+            margin-left: 3.5rem;
+            margin-top: .7rem;
+            display: block;
+            transition: all .3s;
+        }
+
+        &__input:placeholder-shown + &__label {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-3rem);
+        }
+
+    }
 
 </style>
