@@ -87,8 +87,8 @@
                     <label for="name" class="form__label">Full name</label>
                 </div>
                 <div class="form__group">
-                    <input type="email" class="form__input" placeholder="Email address" id="email" required>
-                    <label for="email" class="form__label">Email</label>
+                    <input type="password" class="form__input" placeholder="Password" id="password" required>
+                    <label for="password" class="form__label">Password</label>
                 </div>
             </form>
             <button class="btn btn--purple btn--animated">Login</button>
