@@ -40,6 +40,7 @@
 </script>
 
 <style lang="scss">
-
+//IMPORT MAIN GLOBAL SCSS FILE!
+@import 'assets/sass/main.scss';
 
 </style>

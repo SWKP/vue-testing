@@ -7,6 +7,8 @@ import App from './App';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import IntroPage from './components/IntroPage';
+import PersonalHome from './components/PersonalHome';
+
 
 
 /*Smooth Picker*/
@@ -38,6 +40,10 @@ const routes = [
     {
         path: '/',
         component: IntroPage
+    },
+    {
+        path: '/personalHome',
+        component: PersonalHome
     }
 ];
 
