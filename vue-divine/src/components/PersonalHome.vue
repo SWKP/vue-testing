@@ -3,9 +3,8 @@
         <div class="container">
 
             <header class="header">
-                <div class="topBanner">
-                    Top Banner
-                </div>
+                <app-topBanner class="topBanner"></app-topBanner>
+
                 <div class="messageTicker">
                     Message Ticker
                 </div>
@@ -14,14 +13,10 @@
             
 
             <div class="content">
-                <div class="userPanel">
-                    User Panel
-                </div>
+                    <app-userPanel class="userPanel"></app-userPanel>
 
                 <div class="content__inner">
-                    <nav class="sidebar">
-                        Sidebar
-                    </nav>
+                    <app-personalSidebar class="sidebar"></app-personalSidebar>
                     <div class="posts">
                         Post Area
                     </div>
@@ -38,12 +33,16 @@
 
 <script>
 
-//import Header from './shared/HeaderSmall';
+import UserPanel from './PersonalHome/UserPanel';
+import TopBanner from './PersonalHome/TopBanner';
+import PersonalSidebar from './PersonalHome/PersonalSidebar';
 
 
 export default {
   components: {
-
+      appUserPanel : UserPanel,
+      appTopBanner : TopBanner,
+      appPersonalSidebar: PersonalSidebar
   }
 }
 
@@ -51,14 +50,15 @@ export default {
 
 <style lang="scss" scoped>
     .container {
-        position: relative;
         max-width: var(--boxed-width);
         background-color: var(--color-grey-light-2);
         margin: 8rem auto;
         box-shadow: var(--shadow-dark);
+
+        display: flex;
+        flex-direction: column;
+
         
-        //Filer CSS
-        min-height: 50rem;
     }
     .header {
         width: 100%;
@@ -71,22 +71,19 @@ export default {
     }
 
     .topBanner {
-        background-color: blue;
+        background-color: var(--color-grey-light-4);
         flex: 1;
     }
 
     .messageTicker {
         width: 100%;
         flex: 0 0  7rem;
-        background-color: red;
+        background-color: rgb(200, 24, 216);
     }
 
     .userPanel {
         width: 100%;
-        background-color:rgb(255, 166, 0);
-        
-        //Filler CSS
-        height: 15rem;
+        background-color:rgb(226, 226, 226);
     }
     .content {
 
@@ -96,26 +93,21 @@ export default {
     }
 
     .sidebar {
-        background-color: var(--color-grey-dark-1);
-        flex: 0 0  20%;
-
-        //Filler CSS
-        height: 100rem;
+        background-color: var(--color-grey-light-4);
+        flex: 0 0 28%;
     }
 
     .posts {
-        background-color: orangered;
+        background-color: rgb(207, 200, 250);
         flex: 1;
     }
 
     .footer {
         width: 100%;
         background-color: rgb(224, 221, 221);
-        position: absolute;
-        bottom: 0;
 
         //Filler CSS
-        height: 15rem;
+        height: 10rem;
     }
 
 </style>
