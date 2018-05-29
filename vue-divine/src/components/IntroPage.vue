@@ -206,7 +206,8 @@
 		}
 		p{
 			font-family: Rambla, Helvetica, Arial, sans-serif;
-			font-size: 1.5rem;
+            font-size: 1.9rem;
+            line-height: 1.25em;
 		}
 		.content{
 			position: relative;
@@ -239,7 +240,6 @@
 				padding: 18px 0 20px 0;
 				border: 2px solid #ffffff42;
 				border-radius: 5px;
-				font-size: 20px;
 			}
 		}
 
@@ -387,20 +387,22 @@
             padding: 2rem;
 
             button {
-                margin: 1rem 2.5rem;
-            }
-
-            span {
-                font-size: 1rem;
-                margin-bottom: -20px;
+                margin: 2rem auto 3rem;
+                width: 80%;
+                display: block;
             }
 
             h2 {
                 text-align:center;
-                margin: 3rem 0;
+                margin: 2rem 0 5rem;
                 font-family: Rambla, Helvetica, Arial, sans-serif;
-                font-size: 3rem;
-                line-height: 2rem;
+                font-size: 5rem;
+                
+
+                & span {
+                font-size: 2rem;
+                line-height: 1rem;
+            }
             }
         }
 
@@ -431,7 +433,7 @@
 
     .form {
         &__input {
-            font-size: 1rem;
+            font-size: 1.75rem;
             font-family: inherit;
             padding: 1rem 2rem;
             margin: 0 auto;
@@ -463,9 +465,9 @@
 
         &__label {
             font-family: Rambla, Helvetica, Arial, sans-serif;
-            font-size: .7rem;
+            font-size: 1.9rem;
             font-weight: 500;
-            margin-left: 3.5rem;
+            margin-left: 7rem;
             margin-top: .7rem;
             display: block;
             transition: all .3s;

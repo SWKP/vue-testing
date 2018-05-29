@@ -2,7 +2,9 @@
     <div class="ticker-wrap">
         <div class="ticker">
           <div class="singleItem">Welcome to Dear, Divine.</div>
-            <div class="singleItem"><icon name="quote-left" scale="1.5"></icon>The best preparation for tomorrow is doing your best today.<icon name="quote-right" scale="1.5"></icon></div>
+            <div class="singleItem"><icon name="quote-left" scale="1"></icon>The best preparation for tomorrow is doing your best today.<icon name="quote-right" scale="1"></icon></div>
+            <div class="singleItem"><icon name="quote-left" scale="1"></icon>Always pass on what you have learned.<icon name="quote-right" scale="1"></icon></div>
+            <div class="singleItem"><icon name="quote-left" scale="1"></icon>Death is a natural part of life. Rejoice for those around you who transform into the Force. Mourn them do not. Miss them do not. Attachment leads to jealously. The shadow of greed, that is.<icon name="quote-right" scale="1"></icon></div>
         </div>
     </div>
 </template>
@@ -15,7 +17,7 @@
     @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
     #eventFeed {
         width: 100%;
-        background: #f5a0ff;
+        /*background: #f5a0ff;*/
         height: 80px;
     }
     @-webkit-keyframes ticker {
@@ -26,8 +28,8 @@
   }
 
   100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-1500%, 0, 0);
   }
 }
 
@@ -39,16 +41,16 @@
       }
 
       100% {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
+        -webkit-transform: translate3d(-150%, 0, 0);
+        transform: translate3d(-150%, 0, 0);
       }
     }
 
     .ticker-wrap {
       z-index: 99;
       position: relative;
-      background:#9200ab;
-      width: 100%;
+      /*background:#9200ab;*/
+
       overflow: hidden;
       height: 6rem;
       background-color: rgba(#000, 0.9);
@@ -68,14 +70,14 @@
               animation-timing-function: linear;
      -webkit-animation-name: ticker;
              animation-name: ticker;
-      -webkit-animation-duration: 30s;
-              animation-duration: 30s;
+      -webkit-animation-duration: 80s;
+              animation-duration: 80s;
     }
     .singleItem{
-        font-family: 'Fjalla One', sans-serif;
-        color:hotpink;
+        
+        color:#fff;
         display: inline-block;
-        padding: 0 2rem;
+        padding: .25rem 2rem 0;
         font-size: 2rem;
         height:2rem;
         vertical-align: middle;

@@ -36,6 +36,7 @@ export default {
         width: 100%;
     }
     .logo {
+        filter: brightness(10);
         height: 10rem;
         width: 10rem;
     }
@@ -46,16 +47,24 @@ export default {
             display: flex;
             justify-content: space-between;
             list-style-type: none;
-            text-transform: uppercase;  
+            text-transform: uppercase; 
+            color: #fff; 
 
             & li {
                 text-align: center;
                 flex: 1;
-                padding: 1rem;
+                padding: 1rem 2rem;
+                transition: all .3s;
+                clip-path:polygon(0 0, 100% 0, 100% 40%, 0 40%);
+                //background-color: red;
+                padding-bottom: 6rem;
             }
 
             & li:hover {
-                background-color: red;
+                padding-top: 3rem;
+                background-color: var(--color-primary-highlight);
+                clip-path:polygon(0 0, 100% 0, 100% 100%, 0 70%);
+                cursor: pointer;
             }
         }
     }
