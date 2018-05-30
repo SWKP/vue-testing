@@ -9,8 +9,8 @@
             <br>
             <br>
 
-            <button @click="signUpBack">Back</button>
-            <button @click="signUpNext">Next</button>
+            <button class="btn btn--purple btn--animated" @click="signUpBack">Back</button>
+            <button class="btn btn--purple btn--animated" @click="signUpNext">Next</button>
         </div>
 </template>
 
@@ -136,19 +136,10 @@
         padding:55px;
         background: #dad8d8;
     }
-    input{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 200px;
-    }
-    button{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 150px;
-    }
     h1{
         margin: 10px;
         font-size: 40px;
+        color: #8b40d8;
     }
     p{
         text-align: left;
@@ -157,6 +148,36 @@
     .smooth-picker.flex-box {
         width: 300px;
         margin: 0 auto;
+    }
+
+    /*SHARED STYLES*/
+    input,
+    select {
+        margin: 5px 0px;
+        padding: 1.5rem;
+        width: 200px;
+        border-radius: 100px;
+        border: none;
+        line-height: 3rem;
+        width: 60%!important;
+        font-size: 1.4rem;
+        background-color: #9a4de8;
+        color: #fff!important;
+        transition: all .4s;
+    }
+    ::placeholder {
+            color:white;
+        }
+
+    :focus {
+        background-color: #bc85f5;
+        outline: none;
+    }
+
+    button{
+        margin: 25px 0px;
+        padding: 10px;
+        width: 150px;
     }
 
 </style>

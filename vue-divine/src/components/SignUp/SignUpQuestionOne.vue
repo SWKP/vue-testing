@@ -14,8 +14,8 @@
             <p>Gender:</p>
             <smooth-picker ref="genderSmoothPicker" :data="genderData" :change="genderDataChange" />
             <br>
-            <button @click="signUpBack">Back</button>
-            <button @click="signUpNext">Next</button>
+            <button class="btn btn--purple btn--animated" @click="signUpBack">Back</button>
+            <button class="btn btn--purple btn--animated" @click="signUpNext">Next</button>
         </div>
 </template>
 
@@ -68,20 +68,13 @@
         padding:55px;
         background: #dad8d8;
     }
-    input{
-        margin: 15px 0px;
-        padding: 10px;
-        width: 200px;
-        border: none;
-    }
-    button{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 150px;
+    select {
+        padding: 2rem!important;
     }
     h1{
         margin: 10px;
         font-size: 40px;
+        color: #8b40d8;
     }
     p{
         text-align: left;
@@ -91,11 +84,35 @@
         width: 300px;
         margin: 0 auto;
     }
+
+    /*SHARED STYLES*/
+    input,
     select {
-        width: 220px;
-        padding: 10px;
+        margin: 5px 0px;
+        padding: 1.5rem;
+        width: 200px;
+        border-radius: 100px;
         border: none;
-        color: #b1a9a9;
+        line-height: 3rem;
+        width: 60%!important;
+        font-size: 1.4rem;
+        background-color: #9a4de8;
+        color: #fff!important;
+        transition: all .4s;
+    }
+    ::placeholder {
+            color:white;
+        }
+
+    :focus {
+        background-color: #bc85f5;
+        outline: none;
+    }
+
+    button{
+        margin: 25px 0px;
+        padding: 10px;
+        width: 150px;
     }
 
 </style>

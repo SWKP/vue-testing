@@ -1,7 +1,9 @@
 <template>
     <div class="wrapper">
-        <app-progressBar class="progressBar" size="big" :val="progressBar"></app-progressBar>
+        <transition name="fade">
         <component :is="currentView"></component>
+        <app-progressBar class="progressBar" size="big" :val="progressBar"></app-progressBar>
+        </transition>
     </div>
 </template>
 
@@ -65,35 +67,44 @@
 
 <style scoped>
 
-    #content{
-        width: 600px;
-        text-align: center;
-        margin: 10% auto;
-        padding:55px;
-        background: #dad8d8;
-    }
-    input{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 200px;
-    }
-    button{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 150px;
-    }
-    h1{
-        margin: 10px;
-        font-size: 40px;
-    }
-    p{
-        text-align: left;
-        margin: 25px 15px;
-    }
-    .progressBar {
-        width: 710px;
-        text-align: center;
-        margin: 10% auto 0px;
-    }
+.wrapper {
+    margin-top: 10%;
+    position:relative;
+}
+
+#content{
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    max-width: 600px;
+    text-align: center;
+    background: #e6e6e6!important;
+    margin-bottom: -25px!important;
+    box-shadow: var(--shadow-dark);
+}
+
+.vue-simple-progress {
+}
+
+.progressBar {
+    max-width: 600px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
 
 </style>

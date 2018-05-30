@@ -1,15 +1,15 @@
 <template>
         <div id="content">
             <h1>Join Dear Divine today.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p></p>
             <input placeholder="Full Name">
             <br>
             <input placeholder="Email">
             <br>
             <input placeholder="Password">
             <br>
-            <button @click="signUpBack">Back</button>
-            <button @click="signUpNext">Next</button>
+            <a href="/"><button class="btn btn--purple btn--animated" @click="signUpBack">Back</button></a>
+            <button class="btn btn--purple btn--animated" @click="signUpNext">Next</button>
         </div>
 </template>
 
@@ -39,29 +39,53 @@
 <style scoped>
 
     #content{
+        border-radius: 5px;
         width: 600px;
         text-align: center;
         margin: 0px auto 10%;
         padding:55px;
-        background: #dad8d8;
     }
-    input{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 200px;
-    }
-    button{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 150px;
-    }
+    
     h1{
         margin: 10px;
         font-size: 40px;
+        color: #8b40d8;
     }
     p{
         text-align: left;
         margin: 25px 15px;
     }
+
+    /*SHARED STYLES*/
+    input{
+        margin: 5px 0px;
+        padding: 10px;
+        width: 200px;
+        border-radius: 100px;
+        border: none;
+        line-height: 3rem;
+        width: 60%!important;
+        font-size: 1.4rem;
+        background-color: #9a4de8;
+        color: #fff!important;
+        transition: all .4s;
+    }
+    ::placeholder {
+            color:white;
+        }
+
+    :focus {
+        background-color: #bc85f5;
+        outline: none;
+    }
+
+    button{
+        margin: 25px 0px;
+        padding: 10px;
+        width: 150px;
+    }
+
+
+
 
 </style>

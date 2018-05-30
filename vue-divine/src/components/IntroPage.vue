@@ -91,7 +91,7 @@
                     <label for="password" class="form__label">Password</label>
                 </div>
             </form>
-            <button class="btn btn--purple btn--animated">Login</button>
+            <a href="/personalHome"><button class="btn btn--purple btn--animated">Login</button></a>
         </div>
     </div>
     </div>

@@ -12,8 +12,8 @@
             <br>
             <br>
 
-            <button @click="signUpBack">Back</button>
-            <a href="/personalHome"><button @click="signUpNext">Next</button></a>
+            <button class="btn btn--purple btn--animated" @click="signUpBack">Back</button>
+            <a href="/personalHome"><button class="btn btn--purple btn--animated" @click="signUpNext">Next</button></a>
         </div>
 </template>
 
@@ -65,19 +65,10 @@
         padding:55px;
         background: #dad8d8;
     }
-    input{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 200px;
-    }
-    button{
-        margin: 5px 0px;
-        padding: 10px;
-        width: 150px;
-    }
     h1{
         margin: 10px;
         font-size: 40px;
+        color: #8b40d8;
     }
     p{
         text-align: left;
@@ -88,6 +79,36 @@
     }
     .status{
         width:20px;
+    }
+
+    /*SHARED STYLES*/
+    input,
+    select {
+        margin: 5px 0px;
+        padding: 1.5rem;
+        width: 200px;
+        border-radius: 100px;
+        border: none;
+        line-height: 3rem;
+        width: 60%!important;
+        font-size: 1.4rem;
+        background-color: #9a4de8;
+        color: #fff!important;
+        transition: all .4s;
+    }
+    ::placeholder {
+            color:white;
+        }
+
+    :focus {
+        background-color: #bc85f5;
+        outline: none;
+    }
+
+    button{
+        margin: 25px 0px;
+        padding: 10px;
+        width: 150px;
     }
 
 </style>
