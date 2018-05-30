@@ -14,9 +14,10 @@
                 </div>
             </div>
 
-            <footer class="footer">
+            <!--<footer class="footer">
                 Footer
             </footer>
+            -->
         </div>
         
     </div>
@@ -71,7 +72,7 @@ export default {
 
     .messageTicker {
         width: 100%;
-        flex: 0 0  7rem;
+        flex: 0 0 7rem;
     }
 
     .userPanel {

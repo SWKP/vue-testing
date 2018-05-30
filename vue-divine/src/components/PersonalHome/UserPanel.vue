@@ -66,7 +66,7 @@ export default {
         background-color: #a758f6;
         clip-path:polygon(0 0, 100% 0, 80% 100%, 0 100%);
         flex: 0 0 50rem;
-        padding-left: 2rem;
+        padding-left: 3rem;
     }
     
     &__image {

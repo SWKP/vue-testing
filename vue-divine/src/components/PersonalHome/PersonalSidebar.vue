@@ -72,6 +72,10 @@
                 <icon class="element__icon" name="plus-square" scale="1.5"></icon>
             </div>
         </div>
+
+        <div class="footerText">
+            <h4>Copyright Dear Divine 2018</h4>
+        </div>
     </div>
 </template>
 
@@ -96,7 +100,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding:5rem 6rem;
+        padding:10rem 3rem 3rem 6rem;
         
     }
 
@@ -207,6 +211,13 @@ export default {
             align-self: center;
         }
     }
+
+    .footerText {
+        margin-top: auto;
+        align-self: center;
+        color: grey;
+    }
+
     
 </style>
 
