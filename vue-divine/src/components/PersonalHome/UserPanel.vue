@@ -59,6 +59,7 @@ export default {
     color: #fff;
     background-image: linear-gradient(to right, #00000094, var(--color-primary-light) 70%, var(--color-primary-light));
 
+
     &__avatar {
         display: flex;
         align-items: center;
