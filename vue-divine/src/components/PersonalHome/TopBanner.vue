@@ -1,6 +1,6 @@
 <template>
     <div class="bannerContainer">
-        <img src="../../assets/img/logo-mainV1.png" alt="Main Logo" class="logo">
+        <a href="/"><img src="../../assets/img/logo-mainV1.png" alt="Main Logo" class="logo"></a>
         <nav class="navigation">
             <ul>
                 <li>Main</li>

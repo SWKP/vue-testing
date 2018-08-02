@@ -155,7 +155,7 @@ export default {
         max-width: 500px;
         border-radius: 5px;
         padding: 3rem;
-        background-image: linear-gradient(0deg, #6a36a1, #a758f6);
+        background-image: linear-gradient(0deg, #6a36a1, var(--color-primary-light));
 
         &__title {
             display: flex;
@@ -232,7 +232,7 @@ export default {
             bottom: 0;
             display: flex;
             justify-content: space-between;
-            background-image: linear-gradient(to right bottom, #8f43db87, #a758f68c);
+            background: var(--color-primary-light);
             padding: .5rem 2rem;
             color: #fff;
         }
@@ -318,7 +318,7 @@ export default {
     .element__title {
         text-align: center;
         font-size: 1.9rem;
-        background-image: linear-gradient(to right bottom, #8f43db, #a758f6);
+        background-image: linear-gradient(to right bottom, var(--color-primary-dark), var(--color-primary-light));
         color: #fff;
         padding: 1.25rem 0;
         margin: -1.4rem 0 1.75rem;

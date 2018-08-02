@@ -120,7 +120,7 @@ export default {
         &__title {
             text-align: center;
             font-size: 1.9rem;
-            background-image: linear-gradient(to right bottom, #8f43db, #a758f6);
+            background-image: linear-gradient(to right bottom, var(--color-primary-dark), var(--color-primary-light));
             color: #fff;
             padding: 1.25rem 0;
             margin: -1.4rem 0 1.75rem;

@@ -57,13 +57,13 @@ export default {
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    background-image: linear-gradient(to right, #00000094, #8f43db 70%, #a758f6);
+    background-image: linear-gradient(to right, #00000094, var(--color-primary-light) 70%, var(--color-primary-light));
 
     &__avatar {
         display: flex;
         align-items: center;
         align-self: stretch;
-        background-color: #a758f6;
+        background-color: var(--color-primary-light);
         clip-path:polygon(0 0, 100% 0, 80% 100%, 0 100%);
         flex: 0 0 50rem;
         padding-left: 3rem;

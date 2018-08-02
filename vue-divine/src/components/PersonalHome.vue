@@ -47,7 +47,7 @@ export default {
 <style lang="scss" scoped>
     .container {
         max-width: var(--boxed-width);
-        margin: 8rem auto;
+        margin: 1rem auto;
         box-shadow: var(--shadow-dark);
         border-radius: 5px;
 
